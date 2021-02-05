@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SmallReservationApp.Core.Contact>
+@using SmallReservationApp.Resources
+
+@{
+    ViewBag.Title = Resources.ContactList;
+}
+
+<div class="contact-list-page">
+    <div class="table-responsive">
+        <table class="table contacts-table">
+            <thead>
+                <tr>
+                    <th hidden>ID</th>
+                    <th>@Resources.Name</th>
+                    <th>@Resources.PhoneNumber</th>
+                    <th>@Resources.ContactBirthday</th>
+                    <th>@Resources.ContactType</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: contactList">
+                <tr class="contact-cell">
+                    <td data-bind="text: ContactId" hidden></td>
+                    <td data-bind="text: Name"></td>
+                    <td data-bind="text: PhoneNumber"></td>
+                    <td data-bind="text: BirthDate"></td>
+                    <td data-bind="text: ContactType"></td>
+                    <td>
+                        <p class="actions">
+                            <a class="btn btn-secondary btn-default text-uppercase"
+                               data-bind="attr: { href: '@Url.Action("GetContact","Contact")/' + ContactId }">
+                                @Resources.Edit
+                            </a>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript" src="~/Scripts/app/IndexListContact.js"></script>
+}
+
+

@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmallReservationApp.Web", "SmallReservationApp.Web\SmallReservationApp.Web.csproj", "{E7644D31-F1B4-42A2-8AF5-F0261A9EC01A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmallReservationApp.Core", "SmallReservationApp.Core\SmallReservationApp.Core.csproj", "{C58352FF-973F-4BE1-BDCA-73983FE00350}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmallReservationApp.Control", "SmallReservationApp.Control\SmallReservationApp.Control.csproj", "{3A1D1B00-4C99-4737-A4E9-95926B111FB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmallReservationApp.Base", "SmallReservationApp.Base\SmallReservationApp.Base.csproj", "{B0B224AD-39BD-464C-92C3-CB3FFAD484A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmallReservationApp.Repositories", "SmallReservationApp.Repositories\SmallReservationApp.Repositories.csproj", "{EA0EA324-8C53-4DA5-9C72-2F5866F58DCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmallReservationApp.Resources", "SmallReservationApp.Resources\SmallReservationApp.Resources.csproj", "{EC42CD65-4285-44E7-8C94-E48596C21011}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7644D31-F1B4-42A2-8AF5-F0261A9EC01A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7644D31-F1B4-42A2-8AF5-F0261A9EC01A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7644D31-F1B4-42A2-8AF5-F0261A9EC01A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7644D31-F1B4-42A2-8AF5-F0261A9EC01A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C58352FF-973F-4BE1-BDCA-73983FE00350}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C58352FF-973F-4BE1-BDCA-73983FE00350}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C58352FF-973F-4BE1-BDCA-73983FE00350}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C58352FF-973F-4BE1-BDCA-73983FE00350}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A1D1B00-4C99-4737-A4E9-95926B111FB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A1D1B00-4C99-4737-A4E9-95926B111FB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A1D1B00-4C99-4737-A4E9-95926B111FB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A1D1B00-4C99-4737-A4E9-95926B111FB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0B224AD-39BD-464C-92C3-CB3FFAD484A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0B224AD-39BD-464C-92C3-CB3FFAD484A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0B224AD-39BD-464C-92C3-CB3FFAD484A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0B224AD-39BD-464C-92C3-CB3FFAD484A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA0EA324-8C53-4DA5-9C72-2F5866F58DCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA0EA324-8C53-4DA5-9C72-2F5866F58DCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA0EA324-8C53-4DA5-9C72-2F5866F58DCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA0EA324-8C53-4DA5-9C72-2F5866F58DCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC42CD65-4285-44E7-8C94-E48596C21011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC42CD65-4285-44E7-8C94-E48596C21011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC42CD65-4285-44E7-8C94-E48596C21011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC42CD65-4285-44E7-8C94-E48596C21011}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+		SolutionGuid = {641D8560-A7E6-4225-9F95-311E1B70B635}
+	EndGlobalSection
+EndGlobal

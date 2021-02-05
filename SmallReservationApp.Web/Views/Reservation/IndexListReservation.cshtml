@@ -1,0 +1,97 @@
+﻿@model IEnumerable<SmallReservationApp.Core.Reservation>
+@using SmallReservationApp.Resources
+@using SmallReservationApp.Core
+
+@{
+    ViewBag.Title = Resources.ReservationList;
+    var queryOptions = (QueryOptions)ViewBag.QueryOptions;
+}
+
+<nav>
+    <div class="dropdown mb-3">
+        <button class="btn btn-light border dropdown-toggle col-lg-3 col-md-3 col-sm-12 text-left" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-sort-amount-asc"></i>
+            <span>@Resources.SortBy</span>
+        </button>
+        <div class="dropdown-menu dropdown-user">
+            @Html.BuildDropdownSortableLink(Resources.ByDateAscending, "IndexListReservation", "ReservationDate", true, queryOptions)
+            @Html.BuildDropdownSortableLink(Resources.ByDateDescending, "IndexListReservation", "ReservationDate", false, queryOptions)
+            @Html.BuildDropdownSortableLink(Resources.ByAlphabeticAscending, "IndexListReservation", "Contact.Name", true, queryOptions)
+            @Html.BuildDropdownSortableLink(Resources.ByAlphabeticDescending, "IndexListReservation", "Contact.Name", false, queryOptions)
+            @Html.BuildDropdownSortableLink(Resources.ByRanking, "IndexListReservation", "Ranking", false, queryOptions)
+        </div>
+    </div>
+</nav>
+<table class="table table-striped table-sm">
+    <thead>
+        <tr>
+            <th hidden>ID</th>
+            <th hidden>Reservation Date</th>
+            <th hidden>Ranking</th>
+            <th hidden>Favorites</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: reservationList">
+        <tr class="contact-cell">
+            <td data-bind="text: ReservationId" hidden></td>
+            <td>
+                <div class="row p-0 m-0">
+                    <img class="img-fluid mt-2 mr-2 d-none d-sm-block d-md-block" src="~/Content/Images/reservationImagen.png" alt="Generic placeholder image" />  
+                    <div>
+                        <div class="mb-0 font-weight-bold" data-bind="text: Contact.Name"></div>
+                        <div class="reservation-date" data-bind="text: moment(ReservationDate).format('dddd, MMMM Do [at] LTS');"></div>
+                    </div>
+                </div>
+            </td>
+            <td class="d-none d-md-block">
+                <div>
+                    <label>@Resources.Ranking</label>
+                </div>
+                <div>
+                    <span data-bind="click: $parent.setRanking(1, ReservationId), attr: { id: 'star1' + ReservationId, class: 'fa fa-star'}"></span>
+                    <span data-bind="click: $parent.setRanking(2, ReservationId), attr: { id: 'star2' + ReservationId, class: 'fa fa-star'}"></span>
+                    <span data-bind="click: $parent.setRanking(3, ReservationId), attr: { id: 'star3' + ReservationId, class: 'fa fa-star'}"></span>
+                    <span data-bind="click: $parent.setRanking(4, ReservationId), attr: { id: 'star4' + ReservationId, class: 'fa fa-star'}"></span>
+                    <span data-bind="click: $parent.setRanking(5, ReservationId), attr: { id: 'star5' + ReservationId, class: 'fa fa-star'}"></span>
+                    <span data-bind="click: $parent.setRankingValue(Ranking, ReservationId)" hidden></span>
+                </div>
+            </td>
+            <td>
+                <div class="row">
+                    <div data-bind="ifnot: Favorite">
+                        <div class="row">
+                            <label class="col d-none d-sm-block mt-3">@Resources.AddFavorites</label>
+                            <img class="actions btn favorite" src="~/Content/Images/addfavoritegrey.png" data-bind="click: $parent.onclick.bind(ReservationId)" />
+                        </div>
+                    </div>
+                    <div data-bind="if: Favorite">
+                        <div class="row">
+                            <label class="col d-none d-sm-block mt-3" style="color:lightgrey">@Resources.AddFavorites</label>
+                            <img class="actions btn favorite" src="~/Content/Images/addfavoritered.png" data-bind="click: $parent.onclick.bind(ReservationId)" />
+                        </div>
+
+                    </div>
+                </div>
+            </td>
+            <td>
+                <p class="actions">
+                    <a class="btn btn-secondary btn-default text-uppercase"
+                       data-bind="attr: { href: '@Url.Action("GetReservation","Reservation")/' + ReservationId }">
+                        @Resources.Edit
+                    </a>
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div data-bind="visible: viewPagingControl">
+    @Html.BuildPagination(queryOptions, "IndexListReservation")
+</div>
+<br />
+
+@section scripts
+{
+    <script type="text/javascript" src="~/Scripts/app/IndexListReservation.js"></script>
+}
+
+

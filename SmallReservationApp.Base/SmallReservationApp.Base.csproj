@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B0B224AD-39BD-464C-92C3-CB3FFAD484A4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmallReservationApp.Base</RootNamespace>
+    <AssemblyName>SmallReservationApp.Base</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\BIN\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\DatabaseInitialiser.cs" />
+    <Compile Include="Data\Repositories\Reservation\ReservationRepository.cs" />
+    <Compile Include="Data\Repositories\Contact\ContactRepository.cs" />
+    <Compile Include="Data\Repositories\Repository.cs" />
+    <Compile Include="Data\UnitOfWork.cs" />
+    <Compile Include="Migrations\201811160413094_AddDataEntities.cs" />
+    <Compile Include="Migrations\201811160413094_AddDataEntities.Designer.cs">
+      <DependentUpon>201811160413094_AddDataEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811162118246_AddDataEntities1.cs" />
+    <Compile Include="Migrations\201811162118246_AddDataEntities1.Designer.cs">
+      <DependentUpon>201811162118246_AddDataEntities1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811162120482_AddDataEntitiesModifyContactId.cs" />
+    <Compile Include="Migrations\201811162120482_AddDataEntitiesModifyContactId.Designer.cs">
+      <DependentUpon>201811162120482_AddDataEntitiesModifyContactId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811172017446_ContactReservations.cs" />
+    <Compile Include="Migrations\201811172017446_ContactReservations.Designer.cs">
+      <DependentUpon>201811172017446_ContactReservations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811182124245_ChangeContactType.cs" />
+    <Compile Include="Migrations\201811182124245_ChangeContactType.Designer.cs">
+      <DependentUpon>201811182124245_ChangeContactType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811182129337_ChangeContactType1.cs" />
+    <Compile Include="Migrations\201811182129337_ChangeContactType1.Designer.cs">
+      <DependentUpon>201811182129337_ChangeContactType1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811182131517_ChangeContactTypeFromContact.cs" />
+    <Compile Include="Migrations\201811182131517_ChangeContactTypeFromContact.Designer.cs">
+      <DependentUpon>201811182131517_ChangeContactTypeFromContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811182144335_updateContact.cs" />
+    <Compile Include="Migrations\201811182144335_updateContact.Designer.cs">
+      <DependentUpon>201811182144335_updateContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811182146163_updateContact1.cs" />
+    <Compile Include="Migrations\201811182146163_updateContact1.Designer.cs">
+      <DependentUpon>201811182146163_updateContact1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811182147227_updateContact2.cs" />
+    <Compile Include="Migrations\201811182147227_updateContact2.Designer.cs">
+      <DependentUpon>201811182147227_updateContact2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811182148233_updateContacttocontacttype.cs" />
+    <Compile Include="Migrations\201811182148233_updateContacttocontacttype.Designer.cs">
+      <DependentUpon>201811182148233_updateContacttocontacttype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811201523522_NewReservationElement.cs" />
+    <Compile Include="Migrations\201811201523522_NewReservationElement.Designer.cs">
+      <DependentUpon>201811201523522_NewReservationElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811210232016_NewReservationElement1.cs" />
+    <Compile Include="Migrations\201811210232016_NewReservationElement1.Designer.cs">
+      <DependentUpon>201811210232016_NewReservationElement1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811211941050_ModifyContactTypeFromContact.cs" />
+    <Compile Include="Migrations\201811211941050_ModifyContactTypeFromContact.Designer.cs">
+      <DependentUpon>201811211941050_ModifyContactTypeFromContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811281658040_DeleteProfileDescriptionFromContact.cs" />
+    <Compile Include="Migrations\201811281658040_DeleteProfileDescriptionFromContact.Designer.cs">
+      <DependentUpon>201811281658040_DeleteProfileDescriptionFromContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812020023092_AddFavoritesPropToReservationEntity.cs" />
+    <Compile Include="Migrations\201812020023092_AddFavoritesPropToReservationEntity.Designer.cs">
+      <DependentUpon>201812020023092_AddFavoritesPropToReservationEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901221811572_AddStoredProcedure.cs" />
+    <Compile Include="Migrations\201901221811572_AddStoredProcedure.Designer.cs">
+      <DependentUpon>201901221811572_AddStoredProcedure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901221905519_UpdateDatabaseField.cs" />
+    <Compile Include="Migrations\201901221905519_UpdateDatabaseField.Designer.cs">
+      <DependentUpon>201901221905519_UpdateDatabaseField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901222208439_UpdateDatabaseField2.cs" />
+    <Compile Include="Migrations\201901222208439_UpdateDatabaseField2.Designer.cs">
+      <DependentUpon>201901222208439_UpdateDatabaseField2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901250739410_UpdateFieldRankingReservationTable.cs" />
+    <Compile Include="Migrations\201901250739410_UpdateFieldRankingReservationTable.Designer.cs">
+      <DependentUpon>201901250739410_UpdateFieldRankingReservationTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservationAppDBContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmallReservationApp.Core\SmallReservationApp.Core.csproj">
+      <Project>{c58352ff-973f-4be1-bdca-73983fe00350}</Project>
+      <Name>SmallReservationApp.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmallReservationApp.Repositories\SmallReservationApp.Repositories.csproj">
+      <Project>{ea0ea324-8c53-4da5-9c72-2f5866f58dcc}</Project>
+      <Name>SmallReservationApp.Repositories</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201811160413094_AddDataEntities.resx">
+      <DependentUpon>201811160413094_AddDataEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811162118246_AddDataEntities1.resx">
+      <DependentUpon>201811162118246_AddDataEntities1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811162120482_AddDataEntitiesModifyContactId.resx">
+      <DependentUpon>201811162120482_AddDataEntitiesModifyContactId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811172017446_ContactReservations.resx">
+      <DependentUpon>201811172017446_ContactReservations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811182124245_ChangeContactType.resx">
+      <DependentUpon>201811182124245_ChangeContactType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811182129337_ChangeContactType1.resx">
+      <DependentUpon>201811182129337_ChangeContactType1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811182131517_ChangeContactTypeFromContact.resx">
+      <DependentUpon>201811182131517_ChangeContactTypeFromContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811182144335_updateContact.resx">
+      <DependentUpon>201811182144335_updateContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811182146163_updateContact1.resx">
+      <DependentUpon>201811182146163_updateContact1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811182147227_updateContact2.resx">
+      <DependentUpon>201811182147227_updateContact2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811182148233_updateContacttocontacttype.resx">
+      <DependentUpon>201811182148233_updateContacttocontacttype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811201523522_NewReservationElement.resx">
+      <DependentUpon>201811201523522_NewReservationElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811210232016_NewReservationElement1.resx">
+      <DependentUpon>201811210232016_NewReservationElement1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811211941050_ModifyContactTypeFromContact.resx">
+      <DependentUpon>201811211941050_ModifyContactTypeFromContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811281658040_DeleteProfileDescriptionFromContact.resx">
+      <DependentUpon>201811281658040_DeleteProfileDescriptionFromContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812020023092_AddFavoritesPropToReservationEntity.resx">
+      <DependentUpon>201812020023092_AddFavoritesPropToReservationEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901221811572_AddStoredProcedure.resx">
+      <DependentUpon>201901221811572_AddStoredProcedure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901221905519_UpdateDatabaseField.resx">
+      <DependentUpon>201901221905519_UpdateDatabaseField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901222208439_UpdateDatabaseField2.resx">
+      <DependentUpon>201901222208439_UpdateDatabaseField2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901250739410_UpdateFieldRankingReservationTable.resx">
+      <DependentUpon>201901250739410_UpdateFieldRankingReservationTable.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

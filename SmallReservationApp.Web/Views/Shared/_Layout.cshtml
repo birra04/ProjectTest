@@ -1,0 +1,66 @@
+﻿@using SmallReservationApp.Resources
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title - ISUCorp</title>
+    @{
+        ViewBag.btnTitleValue = ViewBag.Title == Resources.ReservationList ? Resources.CreateReservation : Resources.ReservationList;
+        ViewBag.LinkTitle = ViewBag.btnTitleValue == Resources.CreateReservation ? new MvcHtmlString("<icon class=\"fa fa-caret-left mr-1\"></icon>" + ViewBag.btnTitleValue) : new MvcHtmlString(ViewBag.btnTitleValue + "<icon class=\"fa fa-caret-right ml-1\" />");
+        ViewBag.LinkContact = ViewBag.btnTitleValue == Resources.CreateReservation ? new MvcHtmlString("") : ViewBag.Title == Resources.ContactList ? new MvcHtmlString("") : new MvcHtmlString("<icon class=\"fa fa-caret-left mr-1\"></icon>" + Resources.ContactList);
+
+    }
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="pt-0 bg-light">
+    <div class="flex-row">
+        <div class="flex-row header-topnav">
+            <div class="container">
+                <img src="~/Content/Images/largeLogo.png" class="img-fluid mb-3 d-none d-sm-block d-md-block">
+                <div class="row">
+                    <div class="col-6 p-0">
+                        <img src="~/Content/Images/smallLogo.png" class="img-fluid ml-3 mb-3 d-block d-sm-none" style="width:120px; height:32px">
+                    </div>
+                    <div class="text-right col-6 p-0">
+                        <a class="d-block d-sm-none text-light mr-2" href="@Url.Action(ViewBag.Title == Resources.ReservationList ? "CreateReservation" : "IndexListReservation", "Reservation")">@ViewBag.LinkTitle</a>
+                        <a class="d-block d-sm-none text-light mr-2" href="@Url.Action(ViewBag.Title == Resources.ReservationList ? "CreateReservation" : "IndexListContact", "Contact")">@ViewBag.LinkContact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-row navbar navbar-expand-lg bg-white navbar-light mb-2 d-none d-sm-block d-md-block">
+                <div class="container">
+                    <h3 class="text-danger col-3 pl-0">@ViewBag.Title</h3>
+                    <p class="col-lg-7 col-md-6 text-left mt-2 mb-0">
+                        @Resources.InfoText
+                    </p>
+                    <a class="btn btn-secondary text-uppercase col-lg-2 col-md-3" href="@Url.Action(ViewBag.Title == Resources.ReservationList ? "CreateReservation" : "IndexListReservation", "Reservation")">@ViewBag.btnTitleValue</a>
+                </div>
+            </div>
+            <div class="flex-row navbar navbar-expand-lg bg-white navbar-light mb-2 d-block d-sm-none">
+                <div class="container">
+                    <h3 class="text-danger col-12 text-center">@ViewBag.Title</h3>
+                    <p class="col-12 text-left mt-2 mb-0">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container block bg-white">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/moment")
+    @Scripts.Render("~/bundles/popper-utils")
+    @Scripts.Render("~/bundles/popper")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery-ui")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

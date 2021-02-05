@@ -1,0 +1,168 @@
+﻿#header {
+    margin-bottom: 10px;
+}
+
+.checked {
+    color: orange;
+}
+
+.header-topnav {
+    background-image: url(Images/bannerBackgroundImage.png);
+    background-size: cover;
+    padding-top: 10px;
+}
+
+.input-group-prepend {
+    height: calc(2.25rem + 2px) !important;
+}
+
+.block {
+    padding-top: 50px !important;
+    padding-right: 25px !important;
+    padding-left: 25px !important;
+    margin-top: 25px;
+}
+
+#header .topnav {
+    height: 138px;
+    background: url(Images/bannerBackgroundImage.png);
+    background-size: cover;
+}
+
+
+    #header .topnav .container {
+        position: relative;
+        height: 100%;
+    }
+
+    #header .topnav img {
+        position: absolute;
+        height: 50%;
+        top: 0;
+        bottom: 0;
+        left: 10px;
+        margin: auto;
+    }
+
+#header .nav {
+    position: relative;
+    min-height: 70px;
+    padding: 15px 0;
+}
+
+    #header .nav .page-title,
+    #header .nav .description,
+    #header .nav .actions {
+        margin-left: 190px;
+        text-align: left;
+    }
+
+    #header .nav .page-title {
+        margin: 0;
+        color: #bb0000;
+        font-size: 22pt;
+    }
+
+    #header .nav .description {
+        margin: 0 0 5px 0;
+        width: 100%;
+        color: #7c7c7c;
+    }
+
+@media (max-width: 767px) {
+    #header .nav .page-title,
+    #header .nav .description,
+    #header .nav .actions {
+        text-align: left;
+    }
+}
+
+.edit-contact .top {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fafafa;
+}
+
+.edit-contact .my-input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.edit-contact input,
+.edit-contact select {
+    padding-left: 50px;
+    border-radius: 0;
+}
+
+.edit-contact .my-input-group img {
+    position: absolute;
+    width: auto;
+    height: 30px;
+    top: 0;
+    left: 5px;
+    bottom: 0;
+    margin: auto;
+}
+
+.edit-contact .richtext {
+    margin-bottom: 15px;
+}
+
+@media (max-width: 767px) {
+    .btn-option {
+        display: block;
+        width: 100%;
+        margin: 10px 0
+    }
+}
+
+#editor {
+    height: 300px;
+    background-color: #fff;
+}
+
+.ql-formats {
+    border: 1px solid #d0cfcf;
+    border-radius: 4px;
+}
+
+.custom-select {
+    height: calc(2.25rem + 8px);
+}
+
+.reservation-date {
+    font-size: 12px;
+    color: dimgrey;
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #7c7c7c !important;
+    border-color: #7c7c7c !important;
+}
+
+.dropdown-toggle::after {
+    /*margin-left: 9em !important;*/
+    display: none;
+}
+
+.btn-light {
+    background-color: white !important;
+}
+
+.favorite {
+    padding: 2px !important;
+    margin-top: auto;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.errorStyle {
+    background-color: #7c7c7c;
+    color: #fafafa;
+    font-size: 13px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    margin-top: 7px;
+}
