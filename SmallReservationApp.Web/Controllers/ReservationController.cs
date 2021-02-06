@@ -21,7 +21,7 @@ namespace SmallReservationApp.Web.Controllers
             ReservationManager = reservationManager;
         }
 
-        // GET: ReservationModel
+        // GET: Reservation
         public ActionResult IndexListReservation([Form] QueryOptions queryOptions)
         {
             reservationList = Mapper.Map<IEnumerable<ReservationModel>>(ReservationManager.GetSortList(ref queryOptions));
@@ -30,7 +30,7 @@ namespace SmallReservationApp.Web.Controllers
             return View();
         }
 
-        // GET: ReservationModel/CreateReservation
+        // GET: Reservation/CreateReservation
         public ActionResult CreateReservation(ReservationModel reservation)
         {
             if (reservation == null)

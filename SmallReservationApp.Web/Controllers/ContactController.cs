@@ -17,13 +17,13 @@ namespace SmallReservationApp.Web.Controllers
             ContactManager = contactManager;
         }
 
-        // GET: ContactModel
+        // GET: Contact
         public ActionResult IndexListContact()
         {
             return View();
         }
 
-        // GET: ContactModel/CreateContact
+        // GET: Contact/CreateContact
         public ActionResult CreateContact(ContactModel contact)
         {
             if (contact == null)
